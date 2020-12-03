@@ -1,0 +1,2 @@
+# pdf_extraction_evaluator
+Lets you inspect the amount and quality of the information extracted from a pdf file.
