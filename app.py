@@ -178,7 +178,6 @@ def main():
             c5_content.write(output)
         else:
             c5_content.write(output[c5_page])
-        
     # overall statistics
     expander_stats_overall = st.beta_expander("Overall Statistics")
 
