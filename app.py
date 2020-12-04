@@ -4,7 +4,7 @@ import streamlit as st
 
 # own module
 from module import preprocessing as preprocess
-
+import fitz
 
 @st.cache(allow_output_mutation=True, show_spinner=False)
 def extract_content(df, directory):

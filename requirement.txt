@@ -3,4 +3,4 @@ pandas==1.1.3
 numpy==1.19.2 
 plotly==4.10.0
 tqdm==4.54.0
-fitz==1.18.4
+PyMuPDF==1.16.14
