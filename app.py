@@ -1,6 +1,6 @@
 import pandas as pd
 import streamlit as st
-import plotly.express as px
+#import plotly.express as px
 
 # own module
 from module import preprocessing as preprocess
@@ -128,31 +128,31 @@ def main():
             df_merged[df_merged.filename == chosen_filename])
         out = compute_stats_report(chosen_filename_df)
         c1_content.table(out.T)
-        fig_c2 = px.histogram(
-                round(chosen_filename_df, 3),
-                x="nr_words",
-                nbins=30,
-                color_discrete_sequence=['indianred'],
-                title="Number of words per page")
-        fig_c2.update_layout(
-            xaxis_title='',
-            yaxis_title='Count',
-            width=440
-            )
-        c2_content.plotly_chart(fig_c2)
+        # fig_c2 = px.histogram(
+        #         round(chosen_filename_df, 3),
+        #         x="nr_words",
+        #         nbins=30,
+        #         color_discrete_sequence=['indianred'],
+        #         title="Number of words per page")
+        # fig_c2.update_layout(
+        #     xaxis_title='',
+        #     yaxis_title='Count',
+        #     width=440
+        #     )
+        # c2_content.plotly_chart(fig_c2)
 
-        fig_c3 = px.histogram(
-                round(chosen_filename_df, 3),
-                x="percent_extracted",
-                nbins=30,
-                color_discrete_sequence=['indianred'],
-                title="Percentage extracted per page")
-        fig_c3.update_layout(
-            xaxis_title='',
-            yaxis_title='Count',
-            width=440
-            )
-        c3_content.plotly_chart(fig_c3)
+        # fig_c3 = px.histogram(
+        #         round(chosen_filename_df, 3),
+        #         x="percent_extracted",
+        #         nbins=30,
+        #         color_discrete_sequence=['indianred'],
+        #         title="Percentage extracted per page")
+        # fig_c3.update_layout(
+        #     xaxis_title='',
+        #     yaxis_title='Count',
+        #     width=440
+        #     )
+        # c3_content.plotly_chart(fig_c3)
 
     # display extracted content
     output = {}
@@ -227,28 +227,28 @@ def main():
             label="Variable x-axis",
             options=["industry", "year"]
         )
-        fig_c1 = px.histogram(
-                round(df_merged_subset[
-                    df_merged_subset["percent_extracted"] != 1], 3),
-                x=choice_yaxis,
-                nbins=50,
-                color_discrete_sequence=['indianred'])
-        fig_c1.update_layout(
-            yaxis_title='Percent of content extracted'
-            )
-        c1.plotly_chart(fig_c1)
-        fig_c2 = px.box(
-                round(df_merged_subset[
-                    df_merged_subset["percent_extracted"] != 1], 3),
-                x=choice_xaxis,
-                y=choice_yaxis,
-                color=choice_xaxis)
-        fig_c2.update_layout(
-            showlegend=False,
-            xaxis_title='year',
-            yaxis_title='Percent of content extracted',
-        )
-        c2.plotly_chart(fig_c2)
+        # fig_c1 = px.histogram(
+        #         round(df_merged_subset[
+        #             df_merged_subset["percent_extracted"] != 1], 3),
+        #         x=choice_yaxis,
+        #         nbins=50,
+        #         color_discrete_sequence=['indianred'])
+        # fig_c1.update_layout(
+        #     yaxis_title='Percent of content extracted'
+        #     )
+        # c1.plotly_chart(fig_c1)
+        # fig_c2 = px.box(
+        #         round(df_merged_subset[
+        #             df_merged_subset["percent_extracted"] != 1], 3),
+        #         x=choice_xaxis,
+        #         y=choice_yaxis,
+        #         color=choice_xaxis)
+        # fig_c2.update_layout(
+        #     showlegend=False,
+        #     xaxis_title='year',
+        #     yaxis_title='Percent of content extracted',
+        # )
+        # c2.plotly_chart(fig_c2)
 
 
 if __name__ == "__main__":
